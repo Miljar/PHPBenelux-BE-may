@@ -24,12 +24,22 @@ $(function(){
 	 * Verify the working of the 
 	 */
 	test("round()", function testRound() {
-		expect(2);
+		expect(5);
+		var self = this;
 		
 		// Verify if method exists, and that it takes 2 parameters
-		equals(typeof this.utility.round, "function", "Verify existence of the method");
-		equals(2, this.utility.round.prototype.constructor.length, "Amount of arguments");
+		equals(typeof self.utility.round, "function", "Verify existence of the method");
+		equals(2, self.utility.round.prototype.constructor.length, "Amount of arguments");
 		
-		
+		// Verify exceptions
+		raises(function() {
+			self.utility.round([], 2);
+		}, function(e){ return (e.name == 'Utility.InvalidArgumentException');}, "Must throw error for wrong datatype 1st argument");
+		raises(function() {
+			self.utility.round(2.123456);
+		}, function(e){ return (e.name == 'Utility.InvalidArgumentException');}, "Must throw error for wrong datatype 2nd argument");
+		raises(function() {
+			self.utility.round(2.123456, -2);
+		}, function(e){ return (e.name == 'Utility.InvalidArgumentException');}, "Must throw error for wrong amount of decimals");
 	});
 });
