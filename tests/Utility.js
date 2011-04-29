@@ -30,15 +30,17 @@ $(function(){
 		equal(1, self.utility.RuntimeException.prototype.constructor.length, "Amount of arguments");
 		equal(self.utility.RuntimeException.prototype.name, 'Error', "Check if it of the correct type");
 		
-		// TODO check for optional argument
+		// check for optional argument
 		var exception1 = new self.utility.RuntimeException();
 		equal(exception1.name, 'Utility.RuntimeException', 'Verify we have a new RuntimeException object');
 		equal(exception1.message, '', 'Check optional parameter');
 		
+		// check for argument
 		var errorMessage = 'An error message';
 		var exception2 = new self.utility.RuntimeException(errorMessage);
 		strictEqual(exception2.message, errorMessage, 'Check if parameter is correctly set');
 		
+		// is it catchable?
 		try {
 			throw new self.utility.RuntimeException(errorMessage);
 		} catch (e) {
@@ -56,15 +58,17 @@ $(function(){
 		equal(1, self.utility.InvalidArgumentException.prototype.constructor.length, "Amount of arguments");
 		equal(self.utility.InvalidArgumentException.prototype.name, 'Error', "Check if it of the correct type");
 		
-		// TODO check for optional argument
+		// check for optional argument
 		var exception1 = new self.utility.InvalidArgumentException();
 		equal(exception1.name, 'Utility.InvalidArgumentException', 'Verify we have a new InvalidArgumentException object');
 		equal(exception1.message, '', 'Check optional parameter');
 		
+		// check for argument
 		var errorMessage = 'An error message';
 		var exception2 = new self.utility.InvalidArgumentException(errorMessage);
 		strictEqual(exception2.message, errorMessage, 'Check if parameter is correctly set');
 		
+		// is it catchable?
 		try {
 			throw new self.utility.InvalidArgumentException(errorMessage);
 		} catch (e) {
