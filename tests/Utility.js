@@ -16,7 +16,7 @@ $(function(){
 		
 		ok(typeof this.utility == "object", "Verifying if intantiation worked");
 		
-        equal(typeof this.utility, "object", "Verifying existence of Utility object");
+		ok(this.utility instanceof Utility, 'Verify if instance is of type Utility');
         equal(typeof this.utility.constructor, "function", "Verifying constructor type");
     });
 	
