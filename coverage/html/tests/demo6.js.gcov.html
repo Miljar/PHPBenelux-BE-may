@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>LCOV - jsTestDriver.conf-coverage.dat - tests/demo6.js</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">tests</a> - demo6.js<span style="font-size: 80%;"> (source / <a href="demo6.js.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">jsTestDriver.conf-coverage.dat</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2011-05-03</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :<span class="lineCov">          1 : $(function(){</span></a>
+<span class="lineNum">       2 </span>                :            :     /**
+<span class="lineNum">       3 </span>                :            :      * Define the module:
+<span class="lineNum">       4 </span>                :            :      */
+<span class="lineNum">       5 </span>                :<span class="lineCov">          1 :     module(&quot;Utility&quot;, {</span>
+<span class="lineNum">       6 </span>                :            :                 setup: function setup() {
+<span class="lineNum">       7 </span>                :<span class="lineCov">          4 :                         this.utility = new Utility();</span>
+<span class="lineNum">       8 </span>                :            :                 }
+<span class="lineNum">       9 </span>                :            :         });
+<span class="lineNum">      10 </span>                :            :         
+<span class="lineNum">      11 </span>                :            :     /**
+<span class="lineNum">      12 </span>                :            :      * Verify existence of the utility object:
+<span class="lineNum">      13 </span>                :            :      */
+<span class="lineNum">      14 </span>                :<span class="lineCov">          1 :     test(&quot;instantiation&quot;, 3, function testInstantiation() {</span>
+<span class="lineNum">      15 </span>                :<span class="lineCov">          1 :                 ok(typeof this.utility == &quot;object&quot;, &quot;Verifying if intantiation worked&quot;);</span>
+<span class="lineNum">      16 </span>                :            :                 
+<span class="lineNum">      17 </span>                :<span class="lineCov">          1 :                 ok(this.utility instanceof Utility, 'Verify if instance is of type Utility');</span>
+<span class="lineNum">      18 </span>                :<span class="lineCov">          1 :         equals(typeof this.utility.constructor, &quot;function&quot;, &quot;Verifying constructor type&quot;);</span>
+<span class="lineNum">      19 </span>                :            :     });
+<span class="lineNum">      20 </span>                :            :         
+<span class="lineNum">      21 </span>                :            :         /**
+<span class="lineNum">      22 </span>                :            :          * Test the RuntimeException
+<span class="lineNum">      23 </span>                :            :          */
+<span class="lineNum">      24 </span>                :<span class="lineCov">          1 :         test('RuntimeException', 7, function RuntimeException() {</span>
+<span class="lineNum">      25 </span>                :<span class="lineCov">          1 :                 var self = this;</span>
+<span class="lineNum">      26 </span>                :<span class="lineCov">          1 :                 equals(typeof self.utility.RuntimeException, &quot;function&quot;, &quot;Verify existence of RuntimeException&quot;);</span>
+<span class="lineNum">      27 </span>                :<span class="lineCov">          1 :                 equals(1, self.utility.RuntimeException.prototype.constructor.length, &quot;Amount of arguments&quot;);</span>
+<span class="lineNum">      28 </span>                :<span class="lineCov">          1 :                 equals(self.utility.RuntimeException.prototype.name, 'Error', &quot;Check if it of the correct type&quot;);</span>
+<span class="lineNum">      29 </span>                :            :                 
+<span class="lineNum">      30 </span>                :            :                 // check for optional argument
+<span class="lineNum">      31 </span>                :<span class="lineCov">          1 :                 var exception1 = new self.utility.RuntimeException();</span>
+<span class="lineNum">      32 </span>                :<span class="lineCov">          1 :                 equals(exception1.name, 'Utility.RuntimeException', 'Verify we have a new RuntimeException object');</span>
+<span class="lineNum">      33 </span>                :<span class="lineCov">          1 :                 equals(exception1.message, '', 'Check optional parameter');</span>
+<span class="lineNum">      34 </span>                :            :                 
+<span class="lineNum">      35 </span>                :            :                 // check for argument
+<span class="lineNum">      36 </span>                :<span class="lineCov">          1 :                 var errorMessage = 'An error message';</span>
+<span class="lineNum">      37 </span>                :<span class="lineCov">          1 :                 var exception2 = new self.utility.RuntimeException(errorMessage);</span>
+<span class="lineNum">      38 </span>                :<span class="lineCov">          1 :                 same(exception2.message, errorMessage, 'Check if parameter is correctly set');</span>
+<span class="lineNum">      39 </span>                :            :                 
+<span class="lineNum">      40 </span>                :            :                 // is it catchable?
+<span class="lineNum">      41 </span>                :<span class="lineCov">          1 :                 try {</span>
+<span class="lineNum">      42 </span>                :<span class="lineCov">          1 :                         throw new self.utility.RuntimeException(errorMessage);</span>
+<span class="lineNum">      43 </span>                :            :                 } catch (e) {
+<span class="lineNum">      44 </span>                :<span class="lineCov">          1 :                         equals(e.name, 'Utility.RuntimeException', 'Verify if exception is catchable');</span>
+<span class="lineNum">      45 </span>                :            :                 }
+<span class="lineNum">      46 </span>                :            :         });
+<span class="lineNum">      47 </span>                :            :         
+<span class="lineNum">      48 </span>                :            :         /**
+<span class="lineNum">      49 </span>                :            :          * Test the InvalidArgumentException
+<span class="lineNum">      50 </span>                :            :          */
+<span class="lineNum">      51 </span>                :<span class="lineCov">          1 :         test('InvalidArgumentException', 7, function InvalidArgumentException() {</span>
+<span class="lineNum">      52 </span>                :<span class="lineCov">          1 :                 var self = this;</span>
+<span class="lineNum">      53 </span>                :<span class="lineCov">          1 :                 equals(typeof self.utility.InvalidArgumentException, &quot;function&quot;, &quot;Verify existence of InvalidArgumentException&quot;);</span>
+<span class="lineNum">      54 </span>                :<span class="lineCov">          1 :                 equals(1, self.utility.InvalidArgumentException.prototype.constructor.length, &quot;Amount of arguments&quot;);</span>
+<span class="lineNum">      55 </span>                :<span class="lineCov">          1 :                 equals(self.utility.InvalidArgumentException.prototype.name, 'Error', &quot;Check if it of the correct type&quot;);</span>
+<span class="lineNum">      56 </span>                :            :                 
+<span class="lineNum">      57 </span>                :            :                 // check for optional argument
+<span class="lineNum">      58 </span>                :<span class="lineCov">          1 :                 var exception1 = new self.utility.InvalidArgumentException();</span>
+<span class="lineNum">      59 </span>                :<span class="lineCov">          1 :                 equals(exception1.name, 'Utility.InvalidArgumentException', 'Verify we have a new InvalidArgumentException object');</span>
+<span class="lineNum">      60 </span>                :<span class="lineCov">          1 :                 equals(exception1.message, '', 'Check optional parameter');</span>
+<span class="lineNum">      61 </span>                :            :                 
+<span class="lineNum">      62 </span>                :            :                 // check for argument
+<span class="lineNum">      63 </span>                :<span class="lineCov">          1 :                 var errorMessage = 'An error message';</span>
+<span class="lineNum">      64 </span>                :<span class="lineCov">          1 :                 var exception2 = new self.utility.InvalidArgumentException(errorMessage);</span>
+<span class="lineNum">      65 </span>                :<span class="lineCov">          1 :                 same(exception2.message, errorMessage, 'Check if parameter is correctly set');</span>
+<span class="lineNum">      66 </span>                :            :                 
+<span class="lineNum">      67 </span>                :            :                 // is it catchable?
+<span class="lineNum">      68 </span>                :<span class="lineCov">          1 :                 try {</span>
+<span class="lineNum">      69 </span>                :<span class="lineCov">          1 :                         throw new self.utility.InvalidArgumentException(errorMessage);</span>
+<span class="lineNum">      70 </span>                :            :                 } catch (e) {
+<span class="lineNum">      71 </span>                :<span class="lineCov">          1 :                         equals(e.name, 'Utility.InvalidArgumentException', 'Verify if exception is catchable');</span>
+<span class="lineNum">      72 </span>                :            :                 }
+<span class="lineNum">      73 </span>                :            :         });
+<span class="lineNum">      74 </span>                :            :         
+<span class="lineNum">      75 </span>                :            :         /**
+<span class="lineNum">      76 </span>                :            :          * Verify the working of the round method
+<span class="lineNum">      77 </span>                :            :          */
+<span class="lineNum">      78 </span>                :<span class="lineCov">          1 :         test(&quot;round()&quot;, 2, function testRound() {</span>
+<span class="lineNum">      79 </span>                :<span class="lineCov">          1 :                 var self = this;</span>
+<span class="lineNum">      80 </span>                :            :                 
+<span class="lineNum">      81 </span>                :            :                 // Verify if method exists, and that it takes 2 parameters
+<span class="lineNum">      82 </span>                :<span class="lineCov">          1 :                 equals(typeof self.utility.round, &quot;function&quot;, &quot;Verify existence of the method&quot;);</span>
+<span class="lineNum">      83 </span>                :<span class="lineCov">          1 :                 equals(2, self.utility.round.prototype.constructor.length, &quot;Amount of arguments&quot;);</span>
+<span class="lineNum">      84 </span>                :            :                 
+<span class="lineNum">      85 </span>                :            :                 // Verify exceptions (cannot be tested with JsTestDriver)
+<span class="lineNum">      86 </span>                :            :                 /*
+<span class="lineNum">      87 </span>                :            :                 raises(function() {
+<span class="lineNum">      88 </span>                :            :                         self.utility.round([], 2);
+<span class="lineNum">      89 </span>                :            :                 }, function(e){ return (e.name == 'Utility.InvalidArgumentException');}, &quot;Must throw error for wrong datatype 1st argument&quot;);
+<span class="lineNum">      90 </span>                :            :                 raises(function() {
+<span class="lineNum">      91 </span>                :            :                         self.utility.round(2.123456);
+<span class="lineNum">      92 </span>                :            :                 }, function(e){ return (e.name == 'Utility.InvalidArgumentException');}, &quot;Must throw error for wrong datatype 2nd argument&quot;);
+<span class="lineNum">      93 </span>                :            :                 raises(function() {
+<span class="lineNum">      94 </span>                :            :                         self.utility.round(2.123456, -2);
+<span class="lineNum">      95 </span>                :            :                 }, function(e){ return (e.name == 'Utility.InvalidArgumentException');}, &quot;Must throw error for wrong amount of decimals&quot;);
+<span class="lineNum">      96 </span>                :            :                 */
+<span class="lineNum">      97 </span>                :            :                 
+<span class="lineNum">      98 </span>                :            :                 // TODO test for different values
+<span class="lineNum">      99 </span>                :            :         });
+<span class="lineNum">     100 </span>                :            : });
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.9</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
