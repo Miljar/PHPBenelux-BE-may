@@ -11,9 +11,7 @@ $(function(){
     /**
      * Verify existence of the utility object:
      */
-    test("instantiation", function testInstantiation() {
-        expect(3);
-		
+    test("instantiation", 3, function testInstantiation() {
 		ok(typeof this.utility == "object", "Verifying if intantiation worked");
 		
 		ok(this.utility instanceof Utility, 'Verify if instance is of type Utility');
@@ -23,8 +21,7 @@ $(function(){
 	/**
 	 * Test the RuntimeException
 	 */
-	test('RuntimeException', function RuntimeException() {
-		expect(7);
+	test('RuntimeException', 7, function RuntimeException() {
 		var self = this;
 		equal(typeof self.utility.RuntimeException, "function", "Verify existence of RuntimeException");
 		equal(1, self.utility.RuntimeException.prototype.constructor.length, "Amount of arguments");
@@ -51,8 +48,7 @@ $(function(){
 	/**
 	 * Test the InvalidArgumentException
 	 */
-	test('InvalidArgumentException', function InvalidArgumentException() {
-		expect(7);
+	test('InvalidArgumentException', 7, function InvalidArgumentException() {
 		var self = this;
 		equal(typeof self.utility.InvalidArgumentException, "function", "Verify existence of InvalidArgumentException");
 		equal(1, self.utility.InvalidArgumentException.prototype.constructor.length, "Amount of arguments");
@@ -79,8 +75,7 @@ $(function(){
 	/**
 	 * Verify the working of the round method
 	 */
-	test("round()", function testRound() {
-		expect(5);
+	test("round()", 5, function testRound() {
 		var self = this;
 		
 		// Verify if method exists, and that it takes 2 parameters
